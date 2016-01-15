@@ -33,40 +33,35 @@ gulp.task('help', function() {
 
 gulp.task('sasslint', function() {
     var path = (gutil.env.file)? gutil.env.file : '**/*.scss';
-    return gulp.src('scss/' + path)
+    return gulp.src('static/scss/' + path)
         .pipe(scsslint())
         .pipe(scsslint.failReporter());
 });
 
 gulp.task('sass', function() {
-    return gulp.src('scss/**/*.scss')
+    return gulp.src('static/scss/**/*.scss')
         .pipe(sass({
             style: 'expanded',
             onError: throwSassError
         }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
-        .pipe(gulp.dest('build/css/'))
+        .pipe(gulp.dest('static/css/'))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
-        .pipe(gulp.dest('build/css/'));
+        .pipe(gulp.dest('static/css/'));
 });
 
-gulp.task('docs', function() {
-    return gulp.src('scss/**/*.scss')
-        .pipe(sassdoc({ 'dest': 'build/docs'}));
-});
-
-gulp.task('build', ['sasslint', 'sass', 'docs']);
+gulp.task('build', ['sasslint', 'sass']);
 
 gulp.task('sass-lite', function() {
-    return gulp.src('scss/styles.scss')
+    return gulp.src('static/scss/styles.scss')
         .pipe(sass({ style: 'expanded', errLogToConsole: true }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
-        .pipe(gulp.dest('build/css/'));
+        .pipe(gulp.dest('static/css/'));
 });
 
 gulp.task('watch', function() {
-    gulp.watch('scss/*.scss', ['sass-lite']);
+    gulp.watch('static/scss/*.scss', ['sass-lite']);
 });
 
 gulp.task('test', ['sasslint']);
