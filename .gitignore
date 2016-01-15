@@ -4,6 +4,6 @@ node_modules/
 npm-debug.log
 build/
 .install-dependencies.sh
-.scss-link.yml
+.scss-lint.yml
 gulpfile.js
 package.json
