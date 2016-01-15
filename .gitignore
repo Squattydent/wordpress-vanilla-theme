@@ -2,5 +2,8 @@
 .sass-cache/
 node_modules/
 npm-debug.log
-css/
 build/
+.install-dependencies.sh
+.scss-link.yml
+gulpfile.js
+package.json
