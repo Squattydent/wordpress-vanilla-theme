@@ -114,7 +114,7 @@ add_action( 'widgets_init', 'vanilla_wp_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function vanilla_wp_theme_scripts() {
-	wp_enqueue_style( 'vanilla-wp-theme-style', get_stylesheet_uri() );
+	wp_enqueue_style('fsc', get_stylesheet_directory_uri().'/static/css/build.css', false, null);
 
 	wp_enqueue_script( 'vanilla-wp-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
