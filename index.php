@@ -1,36 +1,31 @@
-<?php
+ <?php
 /**
- * The main template file.
+ * Index main template file.
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Vanilla_WP_Theme
+ * @file           index.php
+ * @package        Vanilla_WP_Theme
+ * @author         Canonical Web Team
+ * @copyright      2016 Canonical Ltd
+ * @license
+ * @version        Release: 1.0
+ * @filesource     wp-content/themes/vanilla-wp-theme/index.php
+ * @since          available since Release 1.0
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
 		<?php
 		if ( have_posts() ) :
-
 			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				<header class="row">
+						<div class="inner-wrapper">
+								<h1 class="tweleve-col"><?php single_post_title(); ?></h1>
+						</div>
 				</header>
-
 			<?php
 			endif;
 
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
-
 				/*
 				 * Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
@@ -48,9 +43,4 @@ get_header(); ?>
 
 		endif; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>

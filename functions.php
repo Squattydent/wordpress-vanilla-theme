@@ -2,9 +2,14 @@
 /**
  * Vanilla WP Theme functions and definitions.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package Vanilla_WP_Theme
+ * @file           functions.php
+ * @package        Vanilla_WP_Theme
+ * @author         Canonical Web Team
+ * @copyright      2016 Canonical Ltd
+ * @license
+ * @version        Release: 1.0
+ * @filesource     wp-content/themes/vanilla-wp-theme/functions.php
+ * @since          available since Release 1.0
  */
 
 if ( ! function_exists( 'vanilla_wp_theme_setup' ) ) :
